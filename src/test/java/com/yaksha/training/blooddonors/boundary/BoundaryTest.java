@@ -28,16 +28,16 @@ public class BoundaryTest {
 
 	private static Validator validator;
 
-	@Before
-	public static void setUp() {
-		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-		validator = factory.getValidator();
-	}
+    @Before
+    public void setUp() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
 
-	@After
-	public static void afterAll() {
-		testReport();
-	}
+    @After
+    public void afterAll() {
+        testReport();
+    }
 
 	@Test
 	public void testFirstNameNotBlank() throws Exception {
