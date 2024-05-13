@@ -8,13 +8,13 @@ import static com.yaksha.training.blooddonors.utils.TestUtils.currentTest;
 import static com.yaksha.training.blooddonors.utils.TestUtils.testReport;
 import static com.yaksha.training.blooddonors.utils.TestUtils.yakshaAssert;
 
-import java.util.Set;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.Set;
 
 import com.yaksha.training.blooddonors.entity.Donor;
 
@@ -28,13 +28,13 @@ public class BoundaryTest {
 
 	private static Validator validator;
 
-	@BeforeAll
+	@Before
 	public static void setUp() {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		validator = factory.getValidator();
 	}
 
-	@AfterAll
+	@After
 	public static void afterAll() {
 		testReport();
 	}
